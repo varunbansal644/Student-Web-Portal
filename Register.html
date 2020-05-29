@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<script>
+    function phonetype(){
+        var mobileNumber=document.getElementById("phone").value;
+        var pattern=/^\d{3}-\d{3}-\d{4}$/;
+        if(pattern.test(mobileNumber)) {
+        document.getElementById("msg1").style.color="red";
+        document.getElementById("msg1").innerHTML="INPUT ACCEPTED";
+        return (true);
+        }
+        else{
+            document.getElementById("msg1").style.color="red";
+        document.getElementById("msg1").innerHTML="Please,type the requested pattern.";
+        return false;
+        }
+    }
+function mysubmit(){
+    var name=document.getElementById("fname").value;
+    alert("Thanks"+" "+name+"! Your registration will be confirmed soon VIA MAIL.");
+}
+</script>
+</head>
+<body style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZ1k0t2stJoWEouk5YMZdPMO5of9piik1VTvoZlCTFMJjl7c8P&usqp=CAU) ;background-repeat: no-repeat; background-size: cover;">
+   <h1 style="color:rgba(3, 68, 6, 0.836);font-size:42px;text-align:center ;">ADD NEW STUDENT</h1>
+    <h2 style="color:rgb(235, 18, 18);text-align: center; font-family: cursive;font-size: 30px;">Please provide all required details to register</h2>
+   <strong> <form style="text-align: center;">
+        <div id="fullpage">
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" name="fname"  required><br><br>
+
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" name="lname" required><br><br>
+
+            <label for="bday">Birthday</label><br>
+            <input type="date" id="bday" name="bday" ><br><br>
+
+            <label for="phone">Contact Number</label><br>
+            <input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx" onblur="phonetype();"><br><br>
+            <span id="msg1"></span>
+
+            <label for="mail">E-mail</label><br>
+            <input type="email" id="mail" name="mail"  placeholder="name@example.com" required><br><br>
+
+            <label for="address">Address</label><br>
+            <textarea name="address" rows="2" cols="24"></textarea><br><br>
+
+            <label for="message">Courese Applied For</label><br>
+            <textarea name="message" rows="5" cols="24"></textarea><br><br>
+
+            <label for="payment">Gender</label><br>
+            <input type="radio" name="p1">Male<br>
+            <input type="radio" name="p1">Female<br>
+            <input type="radio" name="p1">Prefer not to say<br><br>
+            <br>
+       <button onclick="mysubmit()">Submit</button>
+            <input type="reset">
+        </div>
+    </strong>
+    </form>
+</body>
+</html>
